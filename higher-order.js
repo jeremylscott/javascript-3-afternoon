@@ -1,5 +1,6 @@
 /*
-  Once you complete a problem, refresh ./higher-order.html in your browser and check to see if the problem's test(s) are passing.
+  Once you complete a problem, refresh ./higher-order.html in your browser and check to see if the problem's test(s) 
+  are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
 
@@ -20,8 +21,10 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
-//Code Here
-let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+let evenNumbers = mixedNumbers.filter(element => element % 2 === 0)
+ 
+
+ // = mixedNumbers.filter(/* Provide Your Callback Here */)
 
 
 
@@ -44,7 +47,7 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 //Code Here
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
+let postTaxPrices = prices.map(taxAmounts => taxAmounts * 1.07)
 
 
 
@@ -63,8 +66,9 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
-
+let totalPopulation = populations.reduce(function(total,current) {
+  return total + current
+})
 
 
 ////////// PROBLEM 4 //////////
@@ -83,14 +87,14 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 
 /*
   Now we're going to ramp these up a little bit.
-  Instead of just arrays of numbers, we are going to have array of objects that we want to use map, filter, and reduce with.
+  Instead of just arrays of numbers, we are going to have array of objects that we want to use map, filter, and reduce
+  with.
 
   Use the filter method to return only the monsters that have a CP of over 200.
 */
 
 //Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
-
+let myStrongest = monstersInYourPocket.filter(monster => monster.CP > 200).map(monstersInYourPocket => monstersInYourPocket)
 
 
 ////////// PROBLEM 5 //////////
@@ -103,12 +107,11 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 // Do not edit code above.
 
 /*
-  Use a higher order method to get all the order totals after adding in the sales tax. Your answer should be an array of numbers, one total for each order.
+  Use a higher order method to get all the order totals after adding in the sales tax. Your answer should be an array
+  of numbers, one total for each order.
 */
 
-let orderTotals // Code here
-
-
+let orderTotals = orders.map(values => values.price + values.tax)
 
 ////////// PROBLEM 6 //////////
 
@@ -126,6 +129,5 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal //Code Here
-
+let bobsTotal = purchases.map(totPurch => totPurch.price).reduce(totPurch.price)
 
